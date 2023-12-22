@@ -1,0 +1,8 @@
+fastapi
+google-cloud-vision
+tensorflow
+transformers
+numpy
+requests
+pydantic
+uvicorn
