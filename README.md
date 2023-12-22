@@ -37,3 +37,7 @@ gcloud run deploy --source .
 ## Endpoint to acces API
 
 - POST /process_image
+
+## About The model
+
+The model is a finetuned [IndoBERT](https://indolem.github.io/IndoBERT/) model that we retrained on [Indonesian Translated SNLI Corpus](https://github.com/Wikidepia/indonesian_datasets/tree/master/paraphrase/snli). We trained the model for 10 epoch and achieved 0.63743 loss and around 73% accuracy on test set. The final threshold was obtained when we ran the model on the [Indonesian Query Answering Dataset for Online Essay Test System](https://data.mendeley.com/datasets/6gp8m72s9p/1) dataset. The model was tested on the essay with average score above 70.Thus the final threshold for the essay is true are : "entailment" and similarity>=0.60 or “neutral" and Similarity >= 0.70. The similarity threshold for neutral is increased to compensate for model accuracy
