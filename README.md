@@ -40,6 +40,6 @@ gcloud run deploy --source .
 
 ## About The model
 
-For the optical character recognition model we used [google cloud vision api](https://cloud.google.com/vision?hl=en) to detect and recognize text inside a handwritten image. The output of this model will be in the form of a digital text which will be used later on semantic similarity model
+For the optical character recognition model we used [Google Cloud Vision API](https://cloud.google.com/vision?hl=en) to detect and recognize text inside a handwritten image. The output of this model will be in the form of a digital text which will be used later on semantic similarity model
 
 The semantic similarity model is a finetuned [IndoBERT](https://indolem.github.io/IndoBERT/) model that we retrained on [Indonesian Translated SNLI Corpus](https://github.com/Wikidepia/indonesian_datasets/tree/master/paraphrase/snli). We trained the model for 10 epoch and achieved 0.63743 loss and around 73% accuracy on test set. The final threshold was obtained when we ran the model on the [Indonesian Query Answering Dataset for Online Essay Test System](https://data.mendeley.com/datasets/6gp8m72s9p/1) dataset. The model was tested on the essay with average score above 70.Thus the final threshold for the essay is true are : "entailment" and similarity>=0.60 or “neutral" and Similarity >= 0.70. The similarity threshold for neutral is increased to compensate for model accuracy
